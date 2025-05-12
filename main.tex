@@ -65,23 +65,50 @@ We chose it for three reasons:
 \end{itemize}
 
 
-
 % -------------------------------
 % 2. Open Source Investigation
 % -------------------------------
 \section{Open Source Investigation}
 
 \subsection{Understanding the Open Source Community}
-We studied the philosophy behind open source: transparency, collaboration, and community.
+We studied the philosophy behind open source: transparency, collaboration, and community. The core of the open-source movement lies in the principle of "sharing is progress." When source code is made publicly available, anyone can read, improve, and redistribute it, which promotes a highly transparent collaborative culture on a global scale. 
+
+Developers are no longer isolated islands but aggregate into efficient communities through mailing lists, Issues discussion areas, and instant messaging tools. For newcomers, the most direct benefit is the quick acquisition of mature code and learning best practices; for enterprises, open-source means lower cost of trial and error and higher speed of innovation; for us students, we can learn coding standards in actual production, and make connections with peers, receive code reviews, and learn best practices through the open-source community. 
+
+The open-source community usually follows a governance model of consensus-driven and gatekeeping by maintainers: the majority opinion guides the technical direction, but the power to merge code ultimately rests with a few core maintainers.
 
 \subsection{Open Source Licenses}
 The key licenses we investigated include:
 
 \begin{itemize}
     \item \textbf{MIT License}: Highly permissive, allows reuse with attribution.
-    \item \textbf{GPLv3}: Requires derivative works to remain open.
+    \item \textbf{GPL v3}: Requires derivative works to remain open.
     \item \textbf{Apache 2.0}: Includes explicit patent grants.
 \end{itemize}
+    The following is a detailed introduction to the licenses we researched.
+    
+    \noindent\textbf{MIT License}
+
+    The MIT License is one of the simplest and most permissive open-source licenses currently available. It allows anyone to use, copy, modify, and publish code with almost no restrictions, including commercializing it. Developers only need to retain the original copyright notice and license text when distributing the source code to use it legally. The license explicitly states that the software is provided "as is," without any form of warranty liability. The author assumes no responsibility for issues related to functionality, security, or suitability. This provides developers with great flexibility while reducing legal risks. However, the MIT License does not cover patent rights nor does it provide guidance on trademark usage. Therefore, compliance should be assessed when the code involves significant algorithms or trademark usage. Due to its high compatibility, this license is widely used in front-end frameworks (such as React and Vue) as well as various scaffolding tools and lightweight general-purpose libraries.
+
+    \noindent\textbf{GNU General Public License v3 (GPL v3)}
+
+    GPL v3 is a strong Copyleft open-source license released by the Free Software Foundation in 2007. The agreement requires that any derivative works built on GPL v3 code must be made available under the same license whenever they are distributed, ensuring that software freedom can be inherited and continued. In addition to inheritance requirements, GPL v3 also prohibits preventing users from freely using or modifying the software through DRM technologies or hardware restrictions. Furthermore, the agreement includes an automatic patent grant clause, whereby contributors automatically grant their patent licenses related to their code to users. Moreover, if a user who uses GPL v3 licensed code initiates a patent lawsuit against the author, their originally granted patent rights will also be immediately terminated. This agreement is widely used in free software projects such as the GNU toolchain, GDB, Bash, and other core components of operating systems and is a representative license advocating for software freedom.
+
+
+  \noindent\textbf{Apache License 2.0}
+
+    The Apache License 2.0, released by the Apache Software Foundation, is a permissive yet more mature open-source license. It allows users to freely use, modify, and distribute code while further adding provisions for patent rights protection, making it widely adopted in enterprise-level projects. The license explicitly states that contributors automatically grant users a global, irrevocable, royalty-free patent license related to their contributions. Additionally, it introduces a patent retaliation termination mechanism: if a user initiates a patent lawsuit against the original author due to the use of this code, their licensing rights will be immediately revoked. To ensure compliance, Apache 2.0 requires that LICENSE and NOTICE files be retained during distribution to document changes and third-party components relied upon. This plays an important role in corporate governance and compliance audits. Apache 2.0 is compatible with GPL v3 but not with GPL v2 and is currently the mainstream choice in cloud computing and machine learning fields. Notable open-source projects such as Hadoop, Kafka, Spark, TensorFlow all utilize this license.
+% \vspace{1em}
+
+\noindent\textbf{Comparison}
+
+The \textbf{MIT License} is highly compatible and has lenient terms, making it very suitable for developers who want to quickly promote projects, attract more developers to participate, and even consider commercial closed-source integration in the future. It is most common in the fields of front-end frameworks, development tools, lightweight libraries, and other areas. 
+
+The \textbf{Apache 2.0 License}, while maintaining the flexibility of open source, provides patent authorization and anti-suit protection mechanisms, reducing enterprises' concerns about compliance. Enterprise-level infrastructure projects such as cloud computing components, distributed systems, middleware, and machine learning frameworks mainly choose this open source protocol. If the code is for enterprise services or if you want to integrate with the ecosystem of large companies, Apache 2.0 is a more suitable choice. 
+
+The \textbf{GPL v3 License} emphasizes that all derivative works must remain open source. General toolchains, development platforms, educational public projects, and other projects that need to ensure that the code remains open mainly choose this protocol. If developers value software freedom and do not want others to use your code in a closed-source manner, then choosing GPL v3 is appropriate.
+
 
 \subsection{Ways to Contribute}
 Common contribution types include:
