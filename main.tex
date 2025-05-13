@@ -10,6 +10,7 @@
 \usepackage{array}
 \usepackage{setspace}
 \usepackage{caption}
+\usepackage{subcaption}
 
 \setlength{\parskip}{0.5em}
 \setlength{\parindent}{2em}
@@ -100,14 +101,13 @@ The key licenses we investigated include:
 
     The Apache License 2.0, released by the Apache Software Foundation, is a permissive yet more mature open-source license. It allows users to freely use, modify, and distribute code while further adding provisions for patent rights protection, making it widely adopted in enterprise-level projects. The license explicitly states that contributors automatically grant users a global, irrevocable, royalty-free patent license related to their contributions. Additionally, it introduces a patent retaliation termination mechanism: if a user initiates a patent lawsuit against the original author due to the use of this code, their licensing rights will be immediately revoked. To ensure compliance, Apache 2.0 requires that LICENSE and NOTICE files be retained during distribution to document changes and third-party components relied upon. This plays an important role in corporate governance and compliance audits. Apache 2.0 is compatible with GPL v3 but not with GPL v2 and is currently the mainstream choice in cloud computing and machine learning fields. Notable open-source projects such as Hadoop, Kafka, Spark, TensorFlow all utilize this license.
 % \vspace{1em}
-
 \noindent\textbf{Comparison}
 
-The \textbf{MIT License} is highly compatible and has lenient terms, making it very suitable for developers who want to quickly promote projects, attract more developers to participate, and even consider commercial closed-source integration in the future. It is most common in the fields of front-end frameworks, development tools, lightweight libraries, and other areas. 
+The \textbf{MIT License} is highly permissive and ideal for developers aiming to promote projects quickly, encourage contributions, or allow commercial closed-source use. It is widely adopted in front-end frameworks, development tools, and lightweight libraries.
 
-The \textbf{Apache 2.0 License}, while maintaining the flexibility of open source, provides patent authorization and anti-suit protection mechanisms, reducing enterprises' concerns about compliance. Enterprise-level infrastructure projects such as cloud computing components, distributed systems, middleware, and machine learning frameworks mainly choose this open source protocol. If the code is for enterprise services or if you want to integrate with the ecosystem of large companies, Apache 2.0 is a more suitable choice. 
+The \textbf{Apache 2.0 License} retains MIT’s flexibility while adding patent protection and anti-suit clauses, making it well-suited for enterprise use. It is commonly used in cloud computing, distributed systems, middleware, and machine learning frameworks.
 
-The \textbf{GPL v3 License} emphasizes that all derivative works must remain open source. General toolchains, development platforms, educational public projects, and other projects that need to ensure that the code remains open mainly choose this protocol. If developers value software freedom and do not want others to use your code in a closed-source manner, then choosing GPL v3 is appropriate.
+The \textbf{GPL v3 License} requires all derivative works to remain open source, making it suitable for educational, toolchain, and public-interest projects. Developers who prioritize software freedom and want to prevent proprietary reuse often choose GPL v3.
 
 
 \subsection{Ways to Contribute}
@@ -145,7 +145,9 @@ The \texttt{Python-Scripts} project we selected has established clear guidelines
 
 The project particularly encourages first-time participants to refer to open-source beginner resources (such as the \href{https://firstcontributions.github.io/}{First Contributions} guide) to lower the technical barrier. The specific steps for contributing to this project include: \textbf{1) Create an issue and fork the repository}; \textbf{2) Write scripts in a newly created folder along with a \texttt{README.md} documentation}; \textbf{3) Update the main repository's \texttt{README.md}, adding a brief description and link in the script list}; \textbf{4) Initiate a Pull Request referencing the corresponding issue}. 
 
-Maintainers will decide whether to merge code after review, requiring that submissions remain concise and free of unnecessary build dependencies. Additionally, this project adheres to the general behavior guidelines of the \textit{Contributor Covenant}. The community encourages inclusive language, respect for diverse viewpoints, and active responses to suggestions; while harassment, discriminatory remarks, or breaches of others' privacy are strictly prohibited. Maintainers have the authority to correct inappropriate behavior, ensuring that the project's environment is open, friendly, and safe for everyone..
+Maintainers will decide whether to merge code after review, requiring that submissions remain concise and free of unnecessary build dependencies. Additionally, this project adheres to the general behavior guidelines of the \textit{Contributor Covenant}. 
+
+The community encourages inclusive language, respect for diverse viewpoints, and active responses to suggestions; while harassment, discriminatory remarks, or breaches of others' privacy are strictly prohibited. Maintainers have the authority to correct inappropriate behavior, ensuring that the project's environment is open, friendly, and safe for everyone..
 
 
 
@@ -154,19 +156,21 @@ Maintainers will decide whether to merge code after review, requiring that submi
 % ----------------------
 \section{Contribution Plan}
 
-Our group has decided that the team leader will be responsible for coordinating the documentation plan and scheduling, as well as facilitating thorough discussions with all members to select an open-source project for contribution. Each team member will make contributions through their own local repositories after forking the selected project, and a single pull request will be submitted on behalf of the entire group. The specific division of tasks among our members is as follows.
+Our group has decided that the team leader will be responsible for coordinating the documentation plan and scheduling, as well as facilitating thorough discussions with all members to select an open-source project for contribution. 
 
+Each group member will make contributions through their own local repositories after forking the selected project, and a single pull request will be submitted on behalf of the entire group. The specific division of tasks among our members is as follows.
+\vspace{1em}
 \begin{longtable}{|p{3cm}|p{10cm}|}
 \hline
 \textbf{Name} & \textbf{Task} \\
 \hline
- & Coordinate scheduling; write abstracts, plans, conclusions, final layout; final contribution to \texttt{Python-Scripts} \\
+ & Coordinate scheduling; write abstracts, plans, conclusions, implementation; final layout; final contribution to \texttt{Python-Scripts} \\
 \hline
  & Write license, community ecosystem, project selection; contribute to code \texttt{Python-Scripts} \\
 \hline
- & Write Contribution process description, project selection, contribute to code \texttt{Python-Scripts} \\
+ & Write Contribution process description, project selection, results; contribute to code \texttt{Python-Scripts} \\
 \hline
- & Write contribute to \texttt{Python-Scripts}; submit issues to \texttt{Python-Scripts}; document and summarization; \\
+ & Write contribute to \texttt{Python-Scripts}, results; submit issues to \texttt{Python-Scripts}; document and summarization; \\
 \hline
 \end{longtable}
 
@@ -175,44 +179,88 @@ Our group has decided that the team leader will be responsible for coordinating 
 % ----------------------
 \section{Implementation}
 
-We followed a collaborative workflow using GitHub:
+We followed a collaborative workflow using GitHub. First we forked the upstream repository \texttt{Python-Scripts}.
+Then we cloned the local repository and switched to the feature/video branch for development.
 
-\begin{itemize}
-    \item Forked the upstream repository
-    \item Cloned and created local branches
-    \item Used VS Code, pytest, and Markdown tools for implementation
-    \item Opened pull requests with detailed descriptions and commit messages
-\end{itemize}
+We have collaboratively developed a \textit{video\_contact\_sheet} feature on this branch. The \textit{video\_contact\_sheet} is a set of scripts written in pure Python that can batch-generate "contact sheets" for any video file—a grid of thumbnails composed of several keyframes, with metadata such as duration, resolution, and encoding format attached at the bottom. The script automatically detects scene changes, selects representative frames, and arranges them into an A4-sized JPEG; it can quickly process hundreds or thousands of clips using multithreading. 
+
+The positioning of \texttt{Python-Scripts} is single-file or small directory scripts that solve everyday practical problems. The existing entries involve web scraping, PDF manipulation, and mini-games, but there is a lack of video processing tools.
+
+This project is mainly applied in the following scenarios to address some pain points: 1) Quick screening: In content review, course editing, or monitoring playback scenarios, technicians often need to "glance" at a video to determine whether it's worth watching closely. Traditional methods either involve dragging and playing the entire segment or manually taking screenshots, which are time-consuming and labor-intensive. Contact sheets allow users to grasp the summary of materials within ten seconds. 2) Dataset quality inspection: When researching or training video-AI models, it’s often necessary to check if annotations are off-track, if resolutions are consistent, or if black frames/test cards have been mixed in. Running through the entire dataset in batches allows for easy visual identification of abnormal files. 3) Team communication: Editors, directors, and algorithm engineers often use different tools. Abstracting materials into static images shared via IM or PR significantly reduces communication costs.
+
+
+% \begin{itemize}
+%     \item Forked the upstream repository
+%     \item Cloned and created local branches
+%     \item Used VS Code, pytest, and Markdown tools for implementation
+%     \item Opened pull requests with detailed descriptions and commit messages
+% \end{itemize}
 
 % ----------------------
 % 5. Results
 % ----------------------
+%----------------------------------------
 \section{Results}
 
-Our contributions include:
-% \begin{itemize}
-%     \item Pull Request \#101: Bug fix in `api.py` — \url{https://github.com/example/project/pull/101}
-%     \item Pull Request \#102: Improved documentation — \url{https://github.com/example/project/pull/102}
-% \end{itemize}
+The final contribution is a self-contained, modular Python utility named \textit{video\_contact\_sheet}, which generates contact sheet thumbnails for video files by extracting keyframes based on scene changes. This tool is valuable for video dataset inspection, content review, and multimedia summarization tasks.
 
-% \begin{figure}[h!]
-%     \centering
-%     % \includegraphics[width=0.85\textwidth]{pr_screenshot.png}
-%     \caption{Screenshot of pull request submitted and merged}
-% \end{figure}
+The following is our contribution proof. Please click to access our \href{https://github.com/libran11/CPT304A2}{report repository},  \href{https://github.com/libran11/Python-Scripts}{project repository}, \href{https://github.com/DhanushNehru/Python-Scripts/issues/425}{issues}, \href{https://github.com/DhanushNehru/Python-Scripts/pull/426}{pull request}, and other information.
+
+%--- Row 1: fork branch ---------------------------------
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{pic/fork.png}
+    \caption{Forking the repository}
+    \label{fig:fork}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{pic/branch.png}
+    \caption{Creating a feature branch}
+    \label{fig:branch}
+  \end{subfigure}
+  \caption{Repository preparation steps.}
+\end{figure}
+
+%--- Row 2: issue commit -------------------------------
+\begin{figure}[htbp]
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{pic/issue.png}
+    \caption{Opening an issue}
+    \label{fig:issue}
+  \end{subfigure}\hfill
+  \begin{subfigure}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{pic/commit.png}
+    \caption{Relevant commit record}
+    \label{fig:commit}
+  \end{subfigure}
+  \caption{Issue tracking and individual commit proof.}
+\end{figure}
+
+%--- Single image: pull request --------------------------
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.50\textwidth]{pic/pullrequest.png}
+  \caption{Final pull-request showing the integrated contribution.}
+  \label{fig:pullrequest}
+\end{figure}
+%----------------------------------------
+
 
 % ----------------------
 % 6. Discussion
 % ----------------------
 \section{Discussion}
+During this open-source contribution, our group participated in expanding the functionality of the Python-Scripts project on GitHub by submitting a new module, \textit{video\_contact\_sheet}, which extracts keyframes from videos and generates contact sheet images. We completed the full process from topic selection and design to coding, testing, and submitting a pull request, following standard open-source collaboration practices.
 
-Contributing to a real-world project gave us first-hand experience with open-source collaboration. We received valuable feedback from the maintainer. One PR was merged within 24 hours, while another received comments suggesting improvements. We learned the importance of clear communication, readable code, and community etiquette.
+Throughout the contribution, we experienced the community’s strong focus on practicality and code maintainability. The maintainers provided clear issue and PR templates and emphasized coding standards. This process enhanced our skills in Git collaboration, coding conventions, and documentation, while deepening our understanding of how open-source projects operate.
 
 % ----------------------
 % 7. Conclusion
 % ----------------------
 \section{Conclusion}
-In this project, our team first collaborated to complete a survey of open source contributions, including the significance of open source and how to become an open source contributor. Then we selected an actual meaningful open source project \texttt{Python-Scripts}, and actually contributed to the project. Through this course, we learned Git skills and the standard contribution process, and learned how to use git for team collaboration. We plan to continue to pay attention to open source projects outside of this course and continue to contribute.
+In this project, our group first collaborated to complete a survey of open source contributions, including the significance of open source and how to become an open source contributor. Then we selected an actual meaningful open source project \texttt{Python-Scripts}, and actually contributed to the project. Through this course, we learned Git skills and the standard contribution process, and learned how to use git for team collaboration. We plan to continue to pay attention to open source projects outside of this course and continue to contribute.
 
 
 % ----------------------
